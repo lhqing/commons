@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install -y nfs-common wget git tree zsh npm
+sudo apt install -y nfs-common wget git tree zsh npm rsync
 
 # create dir for filestore mount
 sudo mkdir /mnt/filestore -p
@@ -20,7 +20,7 @@ conda config --add channels bioconda
 conda config --add channels conda-forge
 
 # optional tools
-sudo npm install vtop
+sudo npm install -g vtop
 
 # install sky
 pip install --upgrade pip
