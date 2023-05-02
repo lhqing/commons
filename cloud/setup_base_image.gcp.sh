@@ -1,5 +1,9 @@
+# Use this script to setup a base image for GCP using Debian 10 (buster)
+
 sudo apt update
-sudo apt install -y nfs-common wget git tree zsh npm rsync
+# fuse is needed for sky file mount
+# nfs-common is needed for filestore mount
+sudo apt install -y nfs-common wget git tree zsh npm rsync fuse
 
 # create dir for filestore mount
 sudo mkdir /mnt/filestore -p
@@ -25,3 +29,7 @@ sudo npm install -g vtop
 # install sky
 pip install --upgrade pip
 pip install --upgrade "skypilot[gcp]"
+
+# install basic jupyter env
+mamba install -y jupyterlab
+pip install jupyterlab-code-formatter jupyterlab_execute_time black isort
