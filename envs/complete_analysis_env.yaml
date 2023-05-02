@@ -6,42 +6,32 @@ channels:
 dependencies:
   - python=3.9
   - pip
-  - anndata
-  - bedtools
-  - biopython
-  - cutadapt
   - dask
   - flox
   - pandas<2
   - htslib>=1.15
-  - hmmlearn
-  - ipykernel>=6
-  - jupyter
   - jupyterlab
-  - leidenalg
-  - networkx
-  - nodejs
-  - opentsne
-  - plotly
-  - picard
   - pybedtools
   - pyBigWig
-  - pynndescent
   - pysam
-  - pytables
   - rpy2
-  - scanpy
+  - snakemake
+  - seaborn
+  - xarray
+  - zarr
   - scikit-learn
   - statsmodels
   - samtools
-  - snakemake
-  - seaborn
-  - tabulate==0.8.10
-  - xarray
-  - xeus-python
+  - bedtools
+  - pynndescent
+  - pytables
   - yaml
-  - zarr
   - pip:
+      - leidenalg
+      - networkx
+      - opentsne
+      - anndata
+      - scanpy
       - cooler
       - papermill
       - imblearn
@@ -49,9 +39,7 @@ dependencies:
       - ctxcore
       - git+https://github.com/lhqing/ALLCools.git
       - schicluster
-      - jupyterlab-system-monitor
       - jupyterlab-code-formatter
       - jupyterlab_execute_time
       - black
       - isort
-      - lckr-jupyterlab-variableinspector
