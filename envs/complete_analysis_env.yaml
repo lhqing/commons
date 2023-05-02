@@ -1,10 +1,10 @@
-name: base
+name: analysis
 channels:
   - conda-forge
   - bioconda
   - defaults
 dependencies:
-  - python
+  - python=3.9
   - pip
   - anndata
   - bedtools
