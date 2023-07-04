@@ -1,0 +1,18 @@
+# jupyter.yaml
+
+resources:
+  cloud: gcp
+  instance_type: n2d-standard-8
+  region: us-west1
+  disk_size: 128
+  image_id: projects/prod-635e/global/images/hanqing-base-debian10
+
+# file_mounts:
+
+setup: |
+  mamba install -y "pip=21"  # d2l has issue with new pip
+  pip install torch==1.12.0 torchvision==0.13.0
+  pip install d2l==1.0.0b0
+
+run: |
+  nohup jupyter-lab --LabApp.token='' --no-browser --port 3333 > ~/jupyter.log 2>&1 &

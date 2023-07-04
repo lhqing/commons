@@ -1,0 +1,39 @@
+# jupyter.yaml
+
+resources:
+  cloud: gcp
+  instance_type: n2d-standard-32
+  region: us-west1
+  disk_size: 256
+  image_id: projects/prod-635e/global/images/hanqing-base-debian10
+
+file_mounts:
+  /data:
+    source: gs://ecker-rachel-analysis/
+    mode: MOUNT
+  /cemba:
+    source: gs://hanqing-wmb-data/
+    mode: MOUNT
+  /ref:
+    source: gs://hanqing-reference/
+    mode: MOUNT
+  /home/hanliu:
+    source: gs://hanqing-analysis/
+    mode: MOUNT
+  /pfc:
+    source: gs://mouse-pfc-development/
+    mode: MOUNT
+
+setup: |
+  if [ -f $HOME/mambaforge/envs/analysis/bin/python ]
+  then
+    echo "Skip setup"
+  else
+    pip install --upgrade pip
+    wget https://raw.githubusercontent.com/lhqing/commons/main/envs/complete_analysis_env.yaml -O env.yaml
+    mamba env create -f env.yaml
+  fi
+
+run: |
+  mamba activate analysis
+  nohup jupyter-lab --LabApp.token='' --no-browser --port 8898 > ~/jupyter.log 2>&1 &
