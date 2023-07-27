@@ -4,24 +4,18 @@ resources:
   cloud: gcp
   instance_type: n2d-standard-96
   region: us-west1
-  disk_size: 256
+  disk_size: 512
   image_id: projects/prod-635e/global/images/hanqing-base-debian10
 
 file_mounts:
-  /rs2:
-    source: gs://ecker-cemba-rs2/
-    mode: MOUNT
-  /data:
-    source: gs://ecker-rachel-analysis/
-    mode: MOUNT
   /cemba:
-    source: gs://ecker-hanqing-wmb-us-west1/
+    source: gs://hanqing-wmb-data-us-west1/
     mode: MOUNT
   /ref:
-    source: gs://ecker-hanqing-reference/
+    source: gs://hanqing-reference/
     mode: MOUNT
   /home/hanliu:
-    source: gs://ecker-hanqing-analysis/
+    source: gs://hanqing-analysis/
     mode: MOUNT
   /pfc:
     source: gs://mouse-pfc-development/

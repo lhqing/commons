@@ -4,7 +4,7 @@ resources:
   cloud: gcp
   instance_type: n2d-standard-32
   region: us-west1
-  disk_size: 256
+  disk_size: 1024
   image_id: projects/prod-635e/global/images/hanqing-base-debian10
 
 file_mounts:

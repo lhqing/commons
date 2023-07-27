@@ -1,0 +1,23 @@
+# jupyter.yaml
+
+resources:
+  cloud: gcp
+  instance_type: n1-standard-8
+  region: us-west1
+  disk_size: 128
+  accelerators: V100:2
+
+# file_mounts:
+
+setup: |
+  if [ -f $HOME//home/hanliu_salk_edu/miniconda3/lib/python3.9/site-packages/torch/version.py ]
+  then
+    echo "Skip setup"
+  else
+    pip install pip==21 setuptools==65.5.0
+    pip install torch==1.12.0 torchvision==0.13.0
+    pip install d2l==1.0.0b0
+  fi
+
+run: |
+  pwd
