@@ -1,0 +1,17 @@
+# jupyter.yaml
+
+resources:
+  cloud: gcp
+  instance_type: n2d-standard-32
+  region: us-west1
+  disk_size: 256
+  image_id: projects/ecker-bican/global/images/sky-min-image
+
+setup: |
+  pwd
+
+run: |
+  which python
+  which jupyter
+  which mamba
+  mamba install -y pandas

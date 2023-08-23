@@ -21,3 +21,4 @@ setup: |
 
 run: |
   pwd
+  nohup jupyter-lab --LabApp.token='' --no-browser --port 8898 > ~/jupyter.log 2>&1 &
