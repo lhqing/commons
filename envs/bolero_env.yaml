@@ -1,0 +1,34 @@
+name: bolero
+channels:
+  - conda-forge
+  - bioconda
+  - pytorch
+  - defaults
+dependencies:
+  - pip
+  - bedtools
+  - biopython
+  - dask
+  - deeptools
+  - htslib
+  - ipywidgets
+  - jupyterlab
+  - pyarrow
+  - pynndescent
+  - pysam
+  - pytorch
+  - samtools
+  - scikit-learn
+  - seaborn
+  - snakemake
+  - torchvision
+  - xarray
+  - zarr
+  - pip:
+      - black
+      - isort
+      - jupyterlab-code-formatter
+      - jupyterlab_execute_time
+      - papermill
+      - qnorm
+
